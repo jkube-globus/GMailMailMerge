@@ -1,18 +1,18 @@
 function SendEmail() {
 
-  const TEST_RUN = true;
+  const TEST_RUN = false;
 
   const TEST_TO = 'james@globus.org';
   const SUBJECT = 'GCS Migration Cohort Contact E-mail Testing';
   const FROM_NAME = 'Globus Support';
   const REPLY_TO = 'support@globus.org';
-  const EMAIL_HTML_TEMPLATE = 'FollowUpEmail'
+  const EMAIL_HTML_TEMPLATE = 'GCS4ToGCS5Email'
 
   const SHEET_KEY = {
-    EMAIL_ADDRESS: 40,
+    EMAIL_ADDRESS: 0,
     // table data
-    ENDPOINT_ID: 41,
-    ENDPOINT_NAME: 42,
+    ENDPOINT_ID: 1,
+    ENDPOINT_NAME: 2,
   };
 
   // This is the sheet with the list of users and detailed information driving the notifications
@@ -33,7 +33,7 @@ function SendEmail() {
           rows: []
         }
       }
-    }    
+    }
     notifications[email].table.rows.push({
       endpoint_id: row[SHEET_KEY.ENDPOINT_ID],
       endpoint_name: row[SHEET_KEY.ENDPOINT_NAME]
