@@ -65,12 +65,63 @@
 
                   <p>Dear GCSv4 Administrator,</p>
                   <p>
-                    Globus Connect Server Version 5 development is rapidly progressing 
-		    and we're happy to announce that your Endpoint appears to be a viable 
-		    candidate for migration to our newer offering.
-		    <br/>
-		    You can find further details on the migration process here: 
-		    <a href="https://www.globus.org/blog/migrating-gcsv5"> "Migrating to Globus Connect Server Version 5."</a>
+		  <div class="field-item even" property="content:encoded"><p>Globus Connect Server version 5 (GCSv5) provides new capabilities and enhancements for both administrators and users and offers platform features that allow developers to build interesting data management solutions. Among other improvements, GCSv5…</p>
+<p class="rteindent1">-&nbsp; ...replaces user certificates with OAuth based authentication,</p>
+<p class="rteindent1">-&nbsp; ...adds HTTP/S access to data,</p>
+<p class="rteindent1">-&nbsp; ...simplifies support for multiple storage types via a DTN pool,</p>
+<p class="rteindent1">-&nbsp; ...provides higher levels of assurance for managing protected data,</p>
+<p class="rteindent1">-&nbsp; ...synchronizes and backs up endpoint configuration information, and</p>
+<p class="rteindent1">-&nbsp; …adds support for cloud storage from vendors such as Google, Microsoft, and Box.</p>
+<p>For the past year, GCSv5 has been used for all newly created Globus endpoints. Now we are ready for the next phase of our transition to GCSv5: the migration of existing GCSv4 deployments to v5. Globus provides upgrade and migration tooling that extracts configuration information from GCSv4 and applies the settings to a new v5 deployment, preserving the unique identifier (UUID) of the endpoint to ensure continuity of access for users. &nbsp;</p>
+<p>We are rolling out migration in cohorts to ensure we provide adequate and timely user support for the wide variety of possible GCS deployment configurations. Migration will be supported first for managed endpoints organized by cohorts in the order listed below, followed by other types of deployment.<br>
+&nbsp;</p>
+<table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
+<tbody>
+<tr>
+<td style="width: 65px;">Cohort</td>
+<td style="width: 123px;">Number of DTNs</td>
+<td style="width: 125px;">Sharing</td>
+<td style="width: 164px;">Authentication Method</td>
+</tr>
+<tr>
+<td style="width: 65px;">1</td>
+<td style="width: 123px;">Multiple</td>
+<td style="width: 125px;">Not Enabled</td>
+<td style="width: 164px;">CILogon</td>
+</tr>
+<tr>
+<td style="width: 65px;">2</td>
+<td style="width: 123px;">Multiple</td>
+<td style="width: 125px;">Not Enabled</td>
+<td style="width: 164px;">MyProxy OAuth</td>
+</tr>
+<tr>
+<td style="width: 65px;">3</td>
+<td style="width: 123px;">Multiple</td>
+<td style="width: 125px;">Not Enabled</td>
+<td style="width: 164px;">MyProxy</td>
+</tr>
+<tr>
+<td style="width: 65px;">4</td>
+<td style="width: 123px;">Multiple</td>
+<td style="width: 125px;">Enabled</td>
+<td style="width: 164px;">Any</td>
+</tr>
+<tr>
+<td style="width: 65px;">5</td>
+<td style="width: 123px;">Single</td>
+<td style="width: 125px;">Any</td>
+<td style="width: 164px;">Any</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p>Administrators of GCSv4 deployments that meet cohort criteria will be contacted directly when we are ready to support migration of their deployment. &nbsp;Cohort 1 migration begins November 15, 2021.</p>
+<p>If your GCS deployment does not have any shared endpoints and you don’t require preservation of the endpoint UUID, then you don’t have to wait for migration tools. &nbsp;You can replace your GCSv4 endpoint with v5 today by setting up a new GCSv5 deployment and shutting down the old GCSv4 endpoint.</p>
+<p>Please contact <a href="http://Administrators of GCSv4 deployments that meet cohort criteria will be contacted directly when we are ready to support migration of their deployment.  Cohort 1 migration begins November 2021, and we will reach out to administrators of deployments in the next cohorts as we make progress.   Once these cohorts have completed migration, we will support migration of other deployment types and provide information on additional cohorts as needed.   If your GCS deployment does not have any shared endpoints and you don’t require preservation of the endpoint UUID, then you don’t have to wait for migration tools.  You can replace your GCSv4 endpoint with v5 today by setting up a new GCSv5 deployment and shutting down the old GCSv4 endpoint.  Please contact support@globus.org if you have any questions.">support@globus.org</a> if you have any questions.&nbsp;</p>
+<p>
+&nbsp;</p>
+</div>
                   </p>
 
                   <p>
