@@ -65,75 +65,34 @@
               <tr>
                 <td colspan="2" style="padding: 20px; background-color: #fff">
                   <!-- CONTENT START -->
+Dear (subscriber name Globus Endpoint Owner) University of Hawaii IT Services,    
 
-                  <p>Dear GCSv4 Administrator,</p>
-                  <p>
-		  <div class="field-item even" property="content:encoded"><p>Globus Connect Server version 5 (GCSv5) provides new capabilities and enhancements for both administrators and users and offers platform features that allow developers to build interesting data management solutions. Among other improvements, GCSv5…</p>
-<p class="rteindent1">-&nbsp; ...replaces user certificates with OAuth based authentication,</p>
-<p class="rteindent1">-&nbsp; ...adds HTTP/S access to data,</p>
-<p class="rteindent1">-&nbsp; ...simplifies support for multiple storage types via a DTN pool,</p>
-<p class="rteindent1">-&nbsp; ...provides higher levels of assurance for managing protected data,</p>
-<p class="rteindent1">-&nbsp; ...synchronizes and backs up endpoint configuration information, and</p>
-<p class="rteindent1">-&nbsp; …adds support for cloud storage from vendors such as Google, Microsoft, and Box.</p>
-<p>For the past year, GCSv5 has been used for all newly created Globus endpoints.</p><p>Now we are ready for the next phase of our transition to GCSv5: the migration of GCSv4 deployments with Mutliple DTN's and Sharing Enabled.</p><p>Globus provides upgrade and migration tooling that extracts configuration information from GCSv4 and applies the settings to a new v5 deployment, preserving the unique identifier (UUID) of the endpoint to ensure continuity of access for users. &nbsp;</p>
-<p>We are now able to support migration of Endpoints that fall into both Cohort 5, as well as Cohort 4.<br>
-&nbsp;</p>
-<table border="1" cellpadding="1" cellspacing="1" style="width:500px;">
-<tbody>
-<tr>
-<td style="width: 65px;">Cohort</td>
-<td style="width: 123px;">Number of DTNs</td>
-<td style="width: 125px;">Sharing</td>
-<td style="width: 164px;">Authentication Method</td>
-</tr>
-<tr>
-<td style="width: 65px;">1</td>
-<td style="width: 123px;">Multiple</td>
-<td style="width: 125px;">Not Enabled</td>
-<td style="width: 164px;">CILogon</td>
-</tr>
-<tr>
-<td style="width: 65px;">2</td>
-<td style="width: 123px;">Multiple</td>
-<td style="width: 125px;">Not Enabled</td>
-<td style="width: 164px;">MyProxy OAuth</td>
-</tr>
-<tr>
-<td style="width: 65px;">3</td>
-<td style="width: 123px;">Multiple</td>
-<td style="width: 125px;">Not Enabled</td>
-<td style="width: 164px;">MyProxy</td>
-</tr>
-<tr class="targetCohort">
-<td style="width: 65px;">4</td>
-<td style="width: 123px;">Multiple</td>
-<td style="width: 125px;">Enabled</td>
-<td style="width: 164px;">Any</td>
-</tr>
-<tr class="targetCohort">
-<td style="width: 65px;">5</td>
-<td style="width: 123px;">Single</td>
-<td style="width: 125px;">Any</td>
-<td style="width: 164px;">Any</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
+Our records show that you administer one or more Globus endpoints eligible for migration to Globus Connect Server version 5 (GCSv5). GCSv5 provides new capabilities and enhancements for both administrators and users.  We encourage you to migrate to GCSv5 as soon as convenient. 
 
-<p>If your GCS deployment does not have any shared endpoints and you don’t require preservation of the endpoint UUID, then you don’t have to leverage the migration tools. &nbsp;You can replace your GCSv4 endpoint with v5 today by setting up a new GCSv5 deployment and shutting down the old GCSv4 endpoint.</p>
-<p>
-&nbsp;</p>
-</div>
-                  </p>
+A migration guide with detailed instructions is provided here: https://docs.globus.org/globus-connect-server/v5/migration4-guide/.
 
-                  <p>
-                    If you have any questions please contact
-                    <a href="mailto:support@globus.org">support@globus.org</a>
-                    with any questions or concerns.
-                  </p>
+Currently, migration is supported only for endpoints on POSIX storage that do not have any shared endpoints.  Please confirm that the endpoints listed below meet these requirements before beginning migration.
+
+Endpoint Display Name: WPI -- Ace Cluster
+Endpoint UUID: 5fb67e02-e6bb-11e8-8c9a-0a1d4c5c824a
+Endpoint Owner: hawaii@globusid.org
+
+What to expect during migration
+Migration will require downtime of your GCSv4 endpoint. At a high level, migration involves first installing and configuring a new GCSv5 endpoint and then cutting over to the GCSv5 endpoint by migrating the v4 endpoint ID to the v5 endpoint. When the endpoint ID is migrated, all in-flight and pending transfers to and from your GCSv4 endpoint will be canceled.  In-flight and pending transfers, as well as pause rules, will not resume after migration.  
+
+What to expect after migration
+After migration, your users should see no change.  Task histories and bookmarks will be preserved. Continuity of metrics in your subscriber usage reports should be maintained.  However, applications that access your endpoint may need to be updated to support GCSv5.  A guide for adding application support for GCSv5 can be found here:
+https://docs.globus.org/globus-connect-server/migrating-to-v5.4/application-migration/
+
+Please contact us at support@globus.org when you begin migration of your endpoint(s) or if you have any questions.
+
+Regards,
+
+Brigitte
+
+
                   <!-- CONTENT END -->
                   <br />
-                  <p>- The Globus Team</p>
                   <!-- Content ends here -->
                 </td>
               </tr>

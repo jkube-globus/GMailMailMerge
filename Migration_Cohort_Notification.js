@@ -13,6 +13,8 @@ function SendEmail() {
     // table data
     ENDPOINT_ID: 1,
     ENDPOINT_NAME: 2,
+    ORG_NAME: 3,
+    SUB_NAME: 4,
   };
 
   // This is the sheet with the list of users and detailed information driving the notifications
