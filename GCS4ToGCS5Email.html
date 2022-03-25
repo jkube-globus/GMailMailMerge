@@ -3,7 +3,11 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<style>
-		tr.targetCohort	{   font-weight: bold;}
+		td.bold	{   font-weight: bold;}
+    table.endpoint {
+  border-collapse: collapse;
+}
+    span.underline { text-decoration: underline;}
 	</style>
   </head>
 
@@ -70,32 +74,35 @@
 
 		  <p>Our records show that you administer one or more Globus endpoints eligible for migration to Globus Connect Server version 5 (GCSv5). GCSv5 provides new capabilities and enhancements for both administrators and users.  We encourage you to migrate to GCSv5 as soon as convenient.</p> 
 
-		  <p>A migration guide with detailed instructions is provided here: https://docs.globus.org/globus-connect-server/v5/migration4-guide/.</p>
+		  <p>A migration guide with detailed instructions is provided here:<br /> https://docs.globus.org/globus-connect-server/v5/migration4-guide/.</p>
 
 		  <p>Currently, migration is supported only for endpoints on POSIX storage that do not have any shared endpoints.  Please confirm that the endpoints listed below meet these requirements before beginning migration.</p>
 
 		  <p>
-		  	<span class="bold">Endpoint Display Name:</span> <?= table.rows[i].endpoint_name ?>
-			<span class="bold">Endpoint UUID: </span><?= table.rows[i].endpoint_id ?>
-			<span class="bold">Endpoint Owner:</span><?= table.rows[i].endpoint_owner ?>
+      <table style="padding: 0.5em" class="endpoint">
+      <tbody>
+       <tr><td class="bold">Endpoint Display Name:</td><td><?= table.rows[i].endpoint_name ?></td></tr>
+			 <tr><td class="bold">Endpoint UUID:</td><td> <?= table.rows[i].endpoint_id ?></td></tr>
+			 <tr><td class="bold">Endpoint Owner:</td><td> <?= table.rows[i].endpoint_owner ?></td></tr>
+                      <? } ?>
+                    </tbody>
+                  </table>
 		  </p> 
 
 		  <p>
-What to expect during migration
+<span class="underline">What to expect during migration</span><br />
 Migration will require downtime of your GCSv4 endpoint. At a high level, migration involves first installing and configuring a new GCSv5 endpoint and then cutting over to the GCSv5 endpoint by migrating the v4 endpoint ID to the v5 endpoint. When the endpoint ID is migrated, all in-flight and pending transfers to and from your GCSv4 endpoint will be canceled.  In-flight and pending transfers, as well as pause rules, will not resume after migration.  
 		  </p> 
 
 		  <p>
-What to expect after migration
-After migration, your users should see no change.  Task histories and bookmarks will be preserved. Continuity of metrics in your subscriber usage reports should be maintained.  However, applications that access your endpoint may need to be updated to support GCSv5.  A guide for adding application support for GCSv5 can be found here:
+<span class="underline">What to expect after migration</span><br />
+After migration, your users should see no change.  Task histories and bookmarks will be preserved. Continuity of metrics in your subscriber usage reports should be maintained.  However, applications that access your endpoint may need to be updated to support GCSv5.  A guide for adding application support for GCSv5 can be found here: <br />
 https://docs.globus.org/globus-connect-server/migrating-to-v5.4/application-migration/
 		  </p> 
-Please contact us at support@globus.org when you begin migration of your endpoint(s) or if you have any questions.
+<p>Please contact us at support@globus.org when you begin migration of your endpoint(s) or if you have any questions.</p>
 
-Regards,
+Regards,<br />
 Brigitte
-
-
                   <!-- CONTENT END -->
                   <br />
                   <!-- Content ends here -->

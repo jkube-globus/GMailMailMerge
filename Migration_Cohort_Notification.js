@@ -6,8 +6,8 @@ function SendEmail() {
   const SUBJECT = 'Please migrate your Globus endpoint to Globus Connect Server v5';
   const FROM_NAME = 'Globus Support';
   const REPLY_TO = 'support@globus.org';
-  //const EMAIL_HTML_TEMPLATE = 'GCS4ToGCS5Email'
-  const EMAIL_HTML_TEMPLATE = 'ExamplePage'
+  const EMAIL_HTML_TEMPLATE = 'GCS4ToGCS5Email'
+  //const EMAIL_HTML_TEMPLATE = 'ExamplePage'
 //ep_uuid, dsiplay_name, organization, owner, admin_email
   const SHEET_KEY = {
     // table data
