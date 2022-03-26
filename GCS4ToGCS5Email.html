@@ -3,7 +3,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<style>
-		td.bold	{   font-weight: bold;}
+		span.bold,td.bold	{   font-weight: bold;}
+    span.bold {   font-weight: bold;}
     table.endpoint {
   border-collapse: collapse;
 }
@@ -69,8 +70,7 @@
               <tr>
                 <td colspan="2" style="padding: 20px; background-color: #fff">
                   <!-- CONTENT START -->
-                  <?  for (var i = 0; i < table.rows.length; i++) { ?>
-                  <p>Dear <?= table.rows[i].endpoint_suborg ?>,</p>
+                  <p>Dear <?= endpointSuborg ?>,</p>
 
 		  <p>Our records show that you administer one or more Globus endpoints eligible for migration to Globus Connect Server version 5 (GCSv5). GCSv5 provides new capabilities and enhancements for both administrators and users.  We encourage you to migrate to GCSv5 as soon as convenient.</p> 
 
@@ -78,12 +78,13 @@
 
 		  <p>Currently, migration is supported only for endpoints on POSIX storage that do not have any shared endpoints.  Please confirm that the endpoints listed below meet these requirements before beginning migration.</p>
 
+      <?  for (var i = 0; i < table.rows.length; i++) { ?>
 		  <p>
       <table style="padding: 0.5em" class="endpoint">
       <tbody>
-       <tr><td class="bold">Endpoint Display Name:</td><td><?= table.rows[i].endpoint_name ?></td></tr>
-			 <tr><td class="bold">Endpoint UUID:</td><td> <?= table.rows[i].endpoint_id ?></td></tr>
-			 <tr><td class="bold">Endpoint Owner:</td><td> <?= table.rows[i].endpoint_owner ?></td></tr>
+       <tr><td><span class="bold">Endpoint Display Name: </span><?= table.rows[i].endpoint_name ?></td></tr>
+			 <tr><td><span class="bold">Endpoint UUID: </span><?= table.rows[i].endpoint_id ?></td></tr>
+			 <tr><td><span class="bold">Endpoint Owner: </span><?= table.rows[i].endpoint_owner ?></td></tr>
                       <? } ?>
                     </tbody>
                   </table>

@@ -25,13 +25,14 @@ function SendEmail() {
 
   // the actual email notifications we'll send out.
   const notifications = {};
-  // map through the data/worksheet and covert to an object that represents
+  // map through the data/worksheet and convert to an object that represents
   // a single entry per email address.
   rows.forEach(function (row) {
     const email = row[SHEET_KEY.EMAIL_ADDRESS];
     if (!notifications[email]) {
       notifications[email] = {
         recipient: email,
+        endpoint_suborg: row[SHEET_KEY.SUBORG_NAME],
         table: {
           rows: []
         }
@@ -43,6 +44,7 @@ function SendEmail() {
       endpoint_suborg: row[SHEET_KEY.SUBORG_NAME],
       endpoint_owner: row[SHEET_KEY.ENDPOINT_OWNER]
     });
+    //notifications[email].endpoint_suborg.push(row[SHEET_KEY.SUBORG_NAME]);
   });
 
   let sent = 0;
@@ -51,6 +53,10 @@ function SendEmail() {
     if (TEST_RUN === true && sent > 2) return;
     const emailTemplate = HtmlService.createTemplateFromFile(EMAIL_HTML_TEMPLATE);
     emailTemplate.table = notif.table;
+    emailTemplate.endpointSuborg = notif.endpoint_suborg
+    //console.log(emailTemplate.endpointSuborg)
+    //emailTemplate.endpointSuborg = notif.table.row.endpoint_suborg;
+    //console.log(endpoint_suborg)
     //above is how we pass in out values to the HTML template
 
     const htmlMessage = emailTemplate.evaluate().getContent();
